@@ -193,30 +193,10 @@ The server tracks:
 ## Screenshots
 
 ### English Homepage
-- Displays the file sharing interface with student information
-- Features a data table with student names, IDs, departments, and completed credit hours
-- Student ID card images displayed inline
-- File download section for easy access to shared files
-- Language switcher to toggle to Arabic version
+![English Homepage](screenshots/homepage_en.png)
 
 ### Arabic Homepage
-- Same functionality as English version but in Arabic language
-- Right-to-left (RTL) text direction for proper Arabic text rendering
-- All UI elements mirrored for RTL layout
-- Arabic labels and instructions throughout
-- Seamless language switching back to English
-
-### Features Visible in Both Pages
-- **Navigation Bar**: Links to home, Arabic/English versions, and file downloads
-- **Student Information Table**: 
-  - Student Name
-  - Student ID
-  - Department (Computer Science)
-  - Completed Credit Hours
-  - Student ID Card Images (with hover effects)
-- **File Download Section**: Links to download shared files (file1.txt, file2.txt, file3.html)
-- **Responsive Design**: Works on desktop and mobile devices
-- **Color Scheme**: Purple gradient background with professional styling
+![Arabic Homepage](screenshots/homepage_ar.png)
 
 ## Student Information Included
 
