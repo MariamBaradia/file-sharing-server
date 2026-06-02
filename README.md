@@ -4,7 +4,7 @@ A simple, bilingual (English/Arabic) file sharing web server built with Python s
 
 ## Project Overview
 
-This project implements a basic HTTP web server in Python that serves HTML pages, CSS stylesheets, images, and files. It includes full support for both English and Arabic languages with proper right-to-left (RTL) text direction.
+This project implements a basic HTTP web server in Python designed to **share files securely and efficiently** across a network. The server serves HTML pages, CSS stylesheets, images, and downloadable files with a user-friendly interface. The primary purpose of the pages is to provide users with an intuitive platform to browse, view student information, and download shared files. It includes full support for both English and Arabic languages with proper right-to-left (RTL) text direction.
 
 ## Features
 
@@ -109,6 +109,64 @@ The server returns the following HTTP status codes:
 - **404 Not Found**: Requested resource doesn't exist
 - **400 Bad Request**: Malformed HTTP request
 
+### HTTP Status Code Examples
+
+#### 200 OK - Successful Requests
+When the server successfully finds and serves requested resources:
+
+```
+Request: GET /en HTTP/1.1
+Response: HTTP/1.1 200 OK
+Content-Type: text/html
+Content: (HTML homepage content)
+```
+
+```
+Request: GET /files/file1.txt HTTP/1.1
+Response: HTTP/1.1 200 OK
+Content-Type: text/plain
+Content: (File contents)
+```
+
+```
+Request: GET /imgs/mariam_id_card.jpg HTTP/1.1
+Response: HTTP/1.1 200 OK
+Content-Type: image/jpeg
+Content: (Image binary data)
+```
+
+#### 404 Not Found - Missing Resources
+When the requested file or resource does not exist:
+
+```
+Request: GET /nonexistent.html HTTP/1.1
+Response: HTTP/1.1 404 Not Found
+(Error message returned)
+```
+
+```
+Request: GET /files/missing_file.txt HTTP/1.1
+Response: HTTP/1.1 404 Not Found
+(Server cannot locate the file)
+```
+
+Note: Favicon requests typically return 404, which is normal browser behavior.
+
+#### 400 Bad Request - Malformed Requests
+When the HTTP request is malformed or incomplete:
+
+```
+Request: GET HTTP/1.1
+(Missing path in request)
+Response: HTTP/1.1 400 Bad Request
+```
+
+```
+Request: (Empty/invalid HTTP request)
+Response: HTTP/1.1 400 Bad Request
+(Server cannot parse the request)
+```
+
 ## Server Statistics
 
 The server tracks:
@@ -131,6 +189,34 @@ The server tracks:
 | PNG         | image/png                           |
 | GIF         | image/gif                           |
 | Other Files | application/octet-stream (download) |
+
+## Screenshots
+
+### English Homepage
+- Displays the file sharing interface with student information
+- Features a data table with student names, IDs, departments, and completed credit hours
+- Student ID card images displayed inline
+- File download section for easy access to shared files
+- Language switcher to toggle to Arabic version
+
+### Arabic Homepage
+- Same functionality as English version but in Arabic language
+- Right-to-left (RTL) text direction for proper Arabic text rendering
+- All UI elements mirrored for RTL layout
+- Arabic labels and instructions throughout
+- Seamless language switching back to English
+
+### Features Visible in Both Pages
+- **Navigation Bar**: Links to home, Arabic/English versions, and file downloads
+- **Student Information Table**: 
+  - Student Name
+  - Student ID
+  - Department (Computer Science)
+  - Completed Credit Hours
+  - Student ID Card Images (with hover effects)
+- **File Download Section**: Links to download shared files (file1.txt, file2.txt, file3.html)
+- **Responsive Design**: Works on desktop and mobile devices
+- **Color Scheme**: Purple gradient background with professional styling
 
 ## Student Information Included
 
